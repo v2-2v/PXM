@@ -1,5 +1,7 @@
 # PXM
-controll prox mox container and virtual machine on Flask
+controll prox mox container on Flask
+
+友達に仮想コンテナをVPSのように貸すために開発しました
 
 1. discordでログインする
 2. ログインした後に自分のコンテナ一覧が表示される
