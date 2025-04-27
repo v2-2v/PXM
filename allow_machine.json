@@ -1,0 +1,12 @@
+[
+    {
+        "machine_id":"702",
+        "user":["888888888888"],
+        "memo":"there container is exam"
+    },
+    {
+        "machine_id":"701",
+        "user":["00000000000000000","111111111111111"],
+        "memo":"test container"
+    }
+]

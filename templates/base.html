@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>コンテナ管理パネル</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: rgb(107, 236, 118);
+            color: #333;
+        }
+
+        header {
+            background: rgb(107, 236, 118);
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            flex: 1;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .blog-post {
+            background-color: white;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            box-sizing: border-box;
+        }
+
+        .blog-post img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .blog-post h2 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .blog-post p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        {{ addstyle | safe }}
+        @media (max-width: 768px) {
+            .blog-post {
+                width: 100%;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><a href="/pg1">コンテナ管理パネル</a></h1>
+    </header>
+    
+    <nav>
+        <a href="/pg1">コンテナの起動と停止</a>
+        <a href="/pg3">システム管理者向け</a>
+        <a href="/logout">ログアウト👋</a>
+    </nav>
+
+    <div class="container">
+        <div class="blog-post">
+            <h2>{{title | safe }}</h2>
+            {{ body | safe }}
+        </div>
+    </div>
+
+
+    <script>{{ cscript | safe }}</script>
+</body>
+</html>
