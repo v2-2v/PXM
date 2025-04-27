@@ -19,7 +19,7 @@ app.secret_key = os.getenv("SECRET_KEY")
 REDIRECT_URI = os.getenv("FLASK_URL")+"callback"
 PORT=int(os.getenv("PORT"))
 
-AUTH_URL = f"https://discord.com/oauth2/authorize?client_id={CLIENT_ID}&response_type=code&redirect_uri={REDIRECT_URI}&scope=identify+guilds"
+AUTH_URL = f"https://discord.com/oauth2/authorize?client_id={CLIENT_ID}&response_type=code&redirect_uri={REDIRECT_URI}&scope=identify"
 
 TOKEN_URL = 'https://discord.com/api/oauth2/token'
 API_URL = 'https://discord.com/api/users/@me'
