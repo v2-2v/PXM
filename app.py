@@ -112,6 +112,14 @@ def pg2():
     if request.method == 'POST':
         container_id = request.form.get('container_id')
         container_status = request.form.get('container_status')
+        with open("allow_machine.json","r",encoding="utf-8") as f:
+            machines = json.load(f)
+        allow_machine_ids=[]
+        for machine in machines: #そのユーザの許可されたmachine_idのリストを生成
+            if session["user"]["id"] in machine["user"]:
+                allow_machine_ids.append(machine["machine_id"])
+        if not container_id in allow_machine_ids:
+            return "NOT ALLOW YOU^^"
         ###
         status_list=get_container() 
         checked=False
@@ -140,14 +148,6 @@ def pg2():
     elif request.method == 'GET':
         container_id = request.args.get('container_id')
         container_status = code = request.args.get('container_status')
-        status_list=get_container()
-        checked=False
-        for status in status_list:
-            if status["container_id"]==container_id:
-                if status["container_status"]==container_status:
-                    checked=True
-        if checked==False:
-            return "もう一度読み込んでください"
         if container_status=="running":
             switch_to="停止"
         elif container_status=="stopped":
