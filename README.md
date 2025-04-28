@@ -1,5 +1,5 @@
 # PXM
-controll prox mox container on Flask
+controll proxmox container on Flask
 
 友達に仮想コンテナをVPSのように貸すために開発しました
 
